@@ -2,9 +2,9 @@ name: Build Automation GitHub Actions
 
 on:
   push:
-    branches: [ "dev", "main" ]
+    branches: ["dev", "main"]
   pull_request:
-    branches: [ "dev", "main" ]
+    branches: ["dev", "main"]
 
 jobs:
   build:
@@ -29,3 +29,6 @@ jobs:
 
     - name: Analisi statica
       run: mvn checkstyle:check
+
+    - name: Report Coverage to Coveralls
+      run: mvn coveralls:report --define repoToken=${{ secrets.GITHUB_TOKEN }}
