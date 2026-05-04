@@ -1,0 +1,6 @@
+# Cartella di build di Maven
+target/
+
+# File di configurazione di VS Code 
+.vscode/
+.settings/
